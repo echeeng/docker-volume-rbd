@@ -148,7 +148,7 @@ sudo rm -rf ./plugin \
     && docker create --name tmp imachineml/rbd:rootfs \
     && sudo docker export tmp | sudo tar -x --exclude=dev/ -C ./plugin/rootfs \
     && cp config.json ./plugin/ \
-    && docker rm -vf tmp && \
+    && docker rm -vf tmp \
     && docker plugin rm -f imachineml/rbd:1.0.0 || true \
     && sudo docker plugin create imachineml/rbd:1.0.0 ./plugin \
     && sudo rm -rf ./plugin
