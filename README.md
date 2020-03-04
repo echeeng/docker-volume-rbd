@@ -188,6 +188,8 @@ docker plugin rm imachineml/rbd:1.0.0
 
 ## Usage of the plugin
 
+### Installation and activation of the plugin
+
 At the every node in your cluster, install the plugin. When installing, you may
 specify few parameters (refer to the *config.json* during build). Some basic ones
 you should set are shown below as an example.
@@ -208,3 +210,22 @@ docker plugin install imachineml/rbd:1.0.0 \
 
 ```
 
+### Usage of the plugin
+
+When starting a container, the volume will be automatically created with the
+following:
+
+```bash
+docker run .... -v vollabel:/data --volume-driver=imachine/rbd ...
+```
+
+You may also create the volume beforehand like so (specifying the size 512mb):
+
+```bash
+
+docker volume create \
+    -d imachine/rbd \
+    -o size=512 \
+    vollabel
+
+```
