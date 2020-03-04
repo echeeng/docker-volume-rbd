@@ -168,3 +168,15 @@ ID                  NAME                   DESCRIPTION             ENABLED
 f6fe8670aaae        imachineml/rbd:1.0.0   RBD plugin for Docker   false
 ```
 
+### Step 4. Push the plugin to registry
+
+If we want to store the plugin to a registry, we can push it and clean up from
+this build machine (or leave it there).
+
+```bash
+
+docker plugin push imachineml/rbd:1.0.0
+
+docker plugin rm imachineml/rbd:1.0.0
+
+```
