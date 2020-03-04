@@ -6,6 +6,11 @@ RADOS block device Docker volume plugin
 
 This is work based on [Nenzyz/docker-volume-rbd](https://github.com/Nenzyz/docker-volume-rbd)
 
+In building this plugin, we will use a pre-built image *imachineml/rbd:rootfs*.
+This image was built with some defaults. For e.g the default volume size (if
+user did not specify on create request) is set to 10GB. If these defaults need to change,
+we will have to build a different *rootfs* image and use that to build the plugin here.
+
 ## Steps to build the plugin
 
 At the build machine ...
@@ -180,3 +185,6 @@ docker plugin push imachineml/rbd:1.0.0
 docker plugin rm imachineml/rbd:1.0.0
 
 ```
+
+## Usage of the plugin
+
