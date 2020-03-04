@@ -188,3 +188,23 @@ docker plugin rm imachineml/rbd:1.0.0
 
 ## Usage of the plugin
 
+At the every node in your cluster, install the plugin. When installing, you may
+specify few parameters (refer to the *config.json* during build). Some basic ones
+you should set are shown below as an example.
+
+Note that you should have already created the Ceph pool *imachine* and client
+*docker* before hand. The host should have the client's keyring file at location
+*/etc/ceph/ceph.client.docker.keyring*.
+
+
+```bash
+
+docker plugin install imachineml/rbd:1.0.0 \
+    --alias=imachine/rbd \
+    LOG_LEVEL=3 \
+    RBD_CONF_POOL="imachine" \
+    RBD_CONF_CLUSTER=ceph \
+    RBD_CONF_KEYRING_USER=client.docker
+
+```
+
