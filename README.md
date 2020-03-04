@@ -141,6 +141,9 @@ Content:
 
 ### Step 3. Build the plugin
 
+The following will create the plugin *imachineml/rbd:1.0.0*. Any existing plugin
+with the same name:tag will be replaced.
+
 ```bash
 
 sudo rm -rf ./plugin \
