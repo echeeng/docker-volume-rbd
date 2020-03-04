@@ -158,3 +158,13 @@ sudo rm -rf ./plugin \
 
 ```
 
+After the build, we can see that the plugin in loaded into this docker and is
+in state disabled.
+
+```bash
+$ docker plugin ls
+
+ID                  NAME                   DESCRIPTION             ENABLED
+f6fe8670aaae        imachineml/rbd:1.0.0   RBD plugin for Docker   false
+```
+
